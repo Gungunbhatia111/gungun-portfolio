@@ -1,0 +1,14 @@
+{
+  "name": "gungun-portfolio-root",
+  "version": "1.0.0",
+  "description": "Full-stack MERN Freelance Portfolio for Gungun Bhatia",
+  "main": "server/server.js",
+  "scripts": {
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "build:client": "cd client && npm run build"
+  },
+  "keywords": ["mern", "portfolio", "freelance", "react", "express", "node", "mongodb"],
+  "author": "Gungun Bhatia",
+  "license": "ISC"
+}

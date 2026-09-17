@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@custom-variant light (&:where(.light, .light *));
+
+@layer base {
+  :root {
+    --bg-primary: #0b0f19;
+    --bg-secondary: #111827;
+    --bg-card: rgba(17, 24, 39, 0.75);
+    --border-color: rgba(31, 41, 55, 0.8);
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --accent-blue: #3b82f6;
+    --accent-indigo: #6366f1;
+    --accent-emerald: #10b981;
+  }
+
+  .light {
+    --bg-primary: #eef6ff;
+    --bg-secondary: #f8fbff;
+    --bg-card: rgba(255, 255, 255, 0.84);
+    --border-color: rgba(148, 163, 184, 0.34);
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --accent-blue: #2563eb;
+    --accent-indigo: #4f46e5;
+    --accent-emerald: #059669;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 18% 18%, rgba(99, 102, 241, 0.12), transparent 30rem),
+      radial-gradient(circle at 78% 12%, rgba(14, 165, 233, 0.12), transparent 26rem),
+      radial-gradient(circle at 55% 78%, rgba(16, 185, 129, 0.1), transparent 30rem),
+      var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* Modern Corporate Utilities */
+.pro-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pro-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.3);
+}
+
+.light .pro-card:hover {
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.08);
+}
+
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 18px 45px -32px rgba(15, 23, 42, 0.9);
+}
+
+.light .glass-panel {
+  box-shadow: 0 24px 60px -34px rgba(30, 64, 175, 0.26);
+}
+
+.card-3d-wrapper {
+  perspective: 1200px;
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-3d:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px -22px rgba(2, 132, 199, 0.55);
+}
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+/* Subtle SVG Grid Background */
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(156, 163, 175, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.light .bg-dot-pattern {
+  background-image: radial-gradient(rgba(71, 85, 105, 0.18) 1px, transparent 1px);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Professional Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4f46e5;
+}
