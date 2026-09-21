@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -24,11 +25,20 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({
     status: 'OK',
     developer: 'Gungun Bhatia',
-    role: 'MERN Stack Developer & Freelance Web Developer',
+    role: 'Computer Science Student & Full-Stack Developer',
     institution: 'Shri Ram Murti Smarak College of Engineering & Technology (SRMS CET), Bareilly',
     timestamp: new Date().toISOString(),
   });
 });
+
+// Serve frontend in production if hosted unified
+if (process.env.NODE_ENV === 'production') {
+  const clientDist = path.join(__dirname, '../client/dist');
+  app.use(express.static(clientDist));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(clientDist, 'index.html'));
+  });
+}
 
 app.listen(PORT, () => {
   console.log(`Gungun Bhatia Portfolio Backend running on http://localhost:${PORT}`);

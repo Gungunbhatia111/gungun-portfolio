@@ -6,7 +6,7 @@ export const personalInfo = {
   tagline: "Building useful things, learning one technology at a time.",
   bio: "Hi, I'm Gungun. I'm a 3rd-year Computer Science student at Shri Ram Murti Smarak College of Engineering & Technology (SRMS CET), Bareilly. I started with programming fundamentals in C and Java, and gradually moved into Data Structures, web development, and the MERN stack. I learn best by building — whether it's a client website like bombaybakers.in, an internship project, or a hackathon prototype. Currently focused on becoming a stronger software engineer through consistent problem solving and full-stack development.",
   email: "bhatiagungun1111@gmail.com",
-  phone: "+91 9897055770",
+  phone: "+91 98970557701",
   location: "Bareilly, Uttar Pradesh, India",
   college: "Shri Ram Murti Smarak College of Engineering & Technology (SRMS CET), Bareilly",
   university: "Dr. A.P.J. Abdul Kalam Technical University (AKTU)",
