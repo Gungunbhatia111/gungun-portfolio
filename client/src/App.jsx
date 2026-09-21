@@ -4,9 +4,11 @@ import { SubtleBackground } from './components/SubtleBackground';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
-import { Services } from './components/Services';
+import { CurrentlyLearning } from './components/CurrentlyLearning';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
+import { Journey } from './components/Journey';
+import { Services } from './components/Services';
 import { Experience } from './components/Experience';
 import { Certifications } from './components/Certifications';
 import { Education } from './components/Education';
@@ -18,19 +20,21 @@ export function App() {
   return (
     <ThemeProvider>
       <div className="relative min-h-screen selection:bg-indigo-600 selection:text-white">
-        {/* Subtle Background */}
+        {/* Engineering Mesh Background */}
         <SubtleBackground />
 
-        {/* Navigation Bar */}
+        {/* Sticky Clean Navbar */}
         <Navbar />
 
-        {/* Main Content Sections */}
+        {/* Main Sections */}
         <main className="relative z-10">
           <Hero />
           <About />
-          <Services />
+          <CurrentlyLearning />
           <Skills />
           <Projects />
+          <Journey />
+          <Services />
           <Experience />
           <Certifications />
           <Education />

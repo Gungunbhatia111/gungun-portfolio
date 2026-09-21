@@ -1,58 +1,64 @@
 import React from 'react';
-import { ArrowRight, Sparkles, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, MessageSquare, CheckCircle2, Globe, Sparkles } from 'lucide-react';
+import { personalInfo } from '../data/portfolioData';
 
 export const FreelanceCTA = () => {
   return (
     <section className="py-16 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-gradient-to-r from-sky-900/40 via-indigo-900/40 to-purple-900/40 light:from-white/95 light:via-sky-50/95 light:to-indigo-50/95 border border-sky-500/30 light:border-sky-200 p-8 sm:p-12 relative overflow-hidden text-center shadow-2xl light:shadow-sky-900/10">
+        <div className="rounded-3xl human-card bg-indigo-950/30 light:bg-indigo-50/70 border border-indigo-500/30 light:border-indigo-200 p-8 sm:p-12 relative overflow-hidden text-center shadow-lg">
           
-          {/* Subtle glowing ambient circles */}
-          <div className="absolute -top-24 -left-24 w-64 h-64 bg-sky-500/20 light:bg-sky-300/35 rounded-full blur-3xl pointer-events-none"></div>
-          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-purple-500/20 light:bg-indigo-300/30 rounded-full blur-3xl pointer-events-none"></div>
-
           <div className="relative z-10 max-w-3xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-sky-500/20 light:bg-sky-100 text-sky-300 light:text-sky-700 border border-sky-400/30 light:border-sky-200 backdrop-blur-md">
+            <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-indigo-500/15 light:bg-indigo-100 text-indigo-300 light:text-indigo-800 border border-indigo-400/30 light:border-indigo-200">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Let's Build Together</span>
+              <span>Let's Build Something Great</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white light:text-slate-950">
-              Have an idea? <span className="bg-gradient-to-r from-sky-400 to-indigo-300 light:from-sky-600 light:to-indigo-700 bg-clip-text text-transparent">Let's build it.</span>
+            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-100 light:text-slate-900">
+              Need a website for your <span className="text-indigo-400 light:text-indigo-600">business or idea?</span>
             </h2>
 
             <p className="text-base sm:text-lg text-slate-300 light:text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Whether you need a business website, landing page, portfolio, or a complete full-stack web application, I can help turn your idea into a fast, modern working product.
+              Whether you need a commercial business site (like{' '}
+              <a
+                href="https://bombaybakers.in"
+                target="_blank"
+                rel="noreferrer"
+                className="text-amber-400 light:text-amber-700 font-semibold underline underline-offset-4"
+              >
+                bombaybakers.in
+              </a>
+              ), a high-converting landing page, or a full-stack web application, I'm ready to help you ship it.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <a
                 href="#contact"
-                className="px-8 py-4 text-sm font-bold text-white bg-gradient-to-r from-sky-500 via-indigo-600 to-purple-600 rounded-xl shadow-xl shadow-sky-500/25 hover:shadow-sky-500/40 hover:scale-105 transition-all flex items-center gap-2"
+                className="px-7 py-3.5 text-xs sm:text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-sm transition-all flex items-center gap-2 hover:translate-y-[-1px]"
               >
-                <span>Start a Project</span>
+                <span>Start a Project Discussion</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
               <a
-                href="mailto:bhatiagungun1111@gmail.com"
-                className="px-6 py-4 text-sm font-semibold text-slate-200 light:text-slate-800 bg-slate-800/80 light:bg-white hover:bg-slate-700 light:hover:bg-sky-50 border border-slate-700 light:border-slate-200 rounded-xl transition-all hover:scale-105 flex items-center gap-2 light:shadow-md light:shadow-sky-900/5"
+                href={`mailto:${personalInfo.email}`}
+                className="px-6 py-3.5 text-xs sm:text-sm font-semibold text-slate-200 light:text-slate-800 bg-slate-900/80 light:bg-white hover:bg-slate-800 light:hover:bg-slate-50 border border-slate-800 light:border-slate-300 rounded-xl transition-all flex items-center gap-2"
               >
-                <MessageSquare className="w-4 h-4 text-sky-400 light:text-sky-600" />
+                <MessageSquare className="w-4 h-4 text-indigo-400 light:text-indigo-600" />
                 <span>Direct Email Inquiry</span>
               </a>
             </div>
 
             {/* Quality Guarantees Bar */}
-            <div className="pt-8 border-t border-slate-700/50 light:border-slate-200 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-300 light:text-slate-600 font-medium">
+            <div className="pt-8 border-t border-slate-800/80 light:border-slate-300/80 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-300 light:text-slate-600 font-medium">
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Clean, Maintainable Code
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Clean, High-Performance Code
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Fully Responsive Mobile UI
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" /> 100% Mobile Responsive
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Fast Delivery & Clear Updates
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Transparent Updates & Fast Delivery
               </span>
             </div>
 
@@ -63,3 +69,4 @@ export const FreelanceCTA = () => {
     </section>
   );
 };
+
