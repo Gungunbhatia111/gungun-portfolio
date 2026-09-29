@@ -16,6 +16,10 @@ services:
         generateValue: true
       - key: CORS_ORIGIN
         sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
 
   - type: web
     name: gungun-portfolio-client

@@ -1,3 +1,4 @@
+const nodemailer = require('nodemailer');
 const Inquiry = require('../models/Inquiry');
 
 // Memory storage fallback if MongoDB is not connected.
@@ -50,6 +51,45 @@ const submitInquiry = async (req, res) => {
     }
 
     console.log(`New freelance project inquiry received from ${name} (${trimmedEmail})`);
+
+    // Send Email Notification if Nodemailer credentials exist
+    if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+      try {
+        const transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
+          },
+        });
+
+        const recipient = process.env.EMAIL_TO || process.env.EMAIL_USER;
+
+        await transporter.sendMail({
+          from: `"Portfolio Inquiry" <${process.env.EMAIL_USER}>`,
+          to: recipient,
+          replyTo: trimmedEmail,
+          subject: `📩 New Project Inquiry from ${name.trim()}`,
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+              <h2 style="color: #6366f1;">New Freelance Inquiry</h2>
+              <p><strong>Name:</strong> ${name.trim()}</p>
+              <p><strong>Email:</strong> <a href="mailto:${trimmedEmail}">${trimmedEmail}</a></p>
+              <p><strong>Project Type:</strong> ${projectType || 'Full-Stack Web Application'}</p>
+              <p><strong>Budget Range:</strong> ${budget || 'Flexible'}</p>
+              <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
+              <p><strong>Message:</strong></p>
+              <blockquote style="background: #f8fafc; padding: 12px 16px; border-left: 4px solid #6366f1; margin: 0; border-radius: 4px;">
+                ${message.trim()}
+              </blockquote>
+            </div>
+          `,
+        });
+        console.log(`Email notification sent successfully to ${recipient}`);
+      } catch (emailErr) {
+        console.error('Nodemailer Error sending email:', emailErr.message);
+      }
+    }
 
     return res.status(201).json({
       success: true,
