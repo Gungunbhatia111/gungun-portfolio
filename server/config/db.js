@@ -8,6 +8,11 @@ const connectDB = async () => {
       return false;
     }
 
+    try {
+      require('dns').setServers(['8.8.8.8', '8.8.4.4']);
+    } catch (e) {
+      // Ignore fallback errors if custom DNS setting is restricted
+    }
     const conn = await mongoose.connect(connStr);
     console.log(`MongoDB Connected: ${conn.connection.host}`);
     return true;
