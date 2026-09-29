@@ -48,56 +48,53 @@ export const currentlyLearning = [
 ];
 
 export const skillsExperience = {
-  note: "I learn by building. Most of my skills have come from turning ideas into projects, college coursework, and hackathon prototypes.",
+  note: "Building modern web applications and solving problems with core software engineering tools.",
   categories: [
     {
       id: "frontend",
       name: "Frontend",
       skills: [
-        { name: "React.js", usedIn: "Placement Assistant & Portfolios", note: "Hooks, SPA routing, state management" },
-        { name: "JavaScript (ES6+)", usedIn: "All Web Projects", note: "DOM, async/await, modern syntax" },
-        { name: "HTML5 & CSS3", usedIn: "Bombay Bakers & Web Apps", note: "Semantic structure, responsive layouts" },
-        { name: "Tailwind CSS", usedIn: "Placement Assistant & Client Work", note: "Utility-first modern styling" },
-        { name: "Bootstrap 5", usedIn: "College Web Prototypes", note: "Rapid responsive grid design" },
+        { name: "React.js", note: "Modern component architecture & SPA development" },
+        { name: "JavaScript (ES6+)", note: "Asynchronous programming & modern web APIs" },
+        { name: "HTML5 & CSS3", note: "Responsive web layouts & semantic structure" },
+        { name: "Tailwind CSS", note: "Utility-first modern styling & UI design" },
       ],
     },
     {
       id: "backend",
       name: "Backend",
       skills: [
-        { name: "Node.js", usedIn: "Placement Assistant Backend", note: "Runtime, npm ecosystem, server scripts" },
-        { name: "Express.js", usedIn: "REST API Development", note: "Routing, middleware, JSON error handling" },
-        { name: "REST APIs", usedIn: "Full-Stack Projects", note: "API design, HTTP verbs, status codes" },
-        { name: "Java Servlets", usedIn: "Campus Management Portal", note: "Server-side Java, MVC architecture" },
+        { name: "Node.js", note: "Server-side JavaScript runtime & npm ecosystem" },
+        { name: "Express.js", note: "RESTful API development & middleware" },
+        { name: "REST APIs", note: "HTTP verbs, JSON payloads & status codes" },
+        { name: "Java Servlets", note: "Server-side Java web application development" },
       ],
     },
     {
       id: "database",
       name: "Databases",
       skills: [
-        { name: "MongoDB", usedIn: "Placement Assistant", note: "Document modeling, collections, Mongoose" },
-        { name: "MySQL", usedIn: "Academic Projects & DBMS", note: "Relational tables, foreign keys, queries" },
-        { name: "SQL", usedIn: "Data Analytics & Coursework", note: "Complex queries, joins, aggregations" },
+        { name: "MongoDB", note: "NoSQL document modeling & Mongoose ORM" },
+        { name: "MySQL", note: "Relational database tables, joins & queries" },
+        { name: "SQL", note: "Database querying, data manipulation & design" },
       ],
     },
     {
       id: "languages",
       name: "Languages",
       skills: [
-        { name: "Java", usedIn: "DSA Practice (LeetCode 50+)", note: "OOP, collections, algorithm problem solving" },
-        { name: "C Language", usedIn: "HackerRank 5-Star Gold", note: "Foundational memory, pointers, structures" },
-        { name: "C++", usedIn: "Computer Science Coursework", note: "OOP principles, basic DSA" },
-        { name: "Python", usedIn: "Google Data Analytics", note: "Scripting, data analysis fundamentals" },
+        { name: "Java", note: "Object-oriented programming & DSA problem solving" },
+        { name: "C / C++", note: "Programming logic, pointers & core fundamentals" },
+        { name: "Python", note: "Scripting & data analysis basics" },
       ],
     },
     {
       id: "tools",
       name: "Tools & Environment",
       skills: [
-        { name: "Git & GitHub", usedIn: "Version Control for all projects", note: "Commits, branches, collaboration" },
-        { name: "VS Code", usedIn: "Daily Code Editor", note: "Extensions, debugging, terminal integration" },
-        { name: "Postman", usedIn: "API Testing & Validation", note: "Endpoint testing, payloads, headers" },
-        { name: "Eclipse", usedIn: "Java & Servlet Development", note: "Tomcat server configuration" },
+        { name: "Git & GitHub", note: "Version control & source code management" },
+        { name: "VS Code", note: "Primary code editor & development environment" },
+        { name: "Postman", note: "API testing, debugging & payload validation" },
       ],
     },
   ],
