@@ -17,8 +17,9 @@ services:
       - key: CORS_ORIGIN
         sync: false
 
-  - type: static
+  - type: web
     name: gungun-portfolio-client
+    env: static
     rootDir: client
     plan: free
     buildCommand: npm install && npm run build
