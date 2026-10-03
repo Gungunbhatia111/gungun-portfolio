@@ -4,6 +4,8 @@
   "description": "Full-stack MERN Freelance Portfolio for Gungun Bhatia",
   "main": "server/server.js",
   "scripts": {
+    "start": "node server/server.js",
+    "build": "npm run build:client",
     "dev:client": "cd client && npm run dev",
     "dev:server": "cd server && npm run dev",
     "build:client": "cd client && npm run build"

@@ -13,9 +13,10 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
-const allowedOrigins = process.env.CORS_ORIGIN
-  ? process.env.CORS_ORIGIN.split(',').map((origin) => origin.trim())
-  : '*';
+const allowedOrigins =
+  process.env.CORS_ORIGIN && process.env.CORS_ORIGIN !== '*'
+    ? process.env.CORS_ORIGIN.split(',').map((origin) => origin.trim())
+    : '*';
 
 app.use(cors({ origin: allowedOrigins }));
 app.use(express.json());
@@ -32,7 +33,7 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.json({
     status: 'OK',
     message: 'Gungun Bhatia Portfolio API is active and running!',
@@ -41,6 +42,11 @@ app.get('/', (req, res) => {
       contact: '/api/contact (POST)',
     },
   });
+});
+
+// Catch-all for undefined API routes
+app.all('/api/*', (req, res) => {
+  res.status(404).json({ error: 'API endpoint not found' });
 });
 
 // Serve frontend in production if hosted unified
@@ -52,8 +58,20 @@ if (process.env.NODE_ENV === 'production') {
       res.sendFile(path.join(clientDist, 'index.html'));
     });
   }
+} else {
+  app.get('/', (req, res) => {
+    res.json({
+      status: 'OK',
+      message: 'Gungun Bhatia Portfolio API is active and running! Run client dev server on port 5173.',
+      endpoints: {
+        health: '/api/health',
+        contact: '/api/contact (POST)',
+      },
+    });
+  });
 }
 
 app.listen(PORT, () => {
   console.log(`Gungun Bhatia Portfolio Backend running on http://localhost:${PORT}`);
 });
+

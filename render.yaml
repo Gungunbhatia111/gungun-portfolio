@@ -15,7 +15,7 @@ services:
       - key: ADMIN_KEY
         generateValue: true
       - key: CORS_ORIGIN
-        sync: false
+        value: "*"
       - key: EMAIL_USER
         sync: false
       - key: EMAIL_PASS
@@ -28,6 +28,9 @@ services:
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     autoDeploy: true
+    envVars:
+      - key: VITE_API_URL
+        value: https://gungun-portfolio-api.onrender.com/api
     routes:
       - type: rewrite
         source: /*
